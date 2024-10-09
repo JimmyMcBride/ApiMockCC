@@ -1,6 +1,5 @@
 package com.example.tmobilecc.data.repository
 
-import android.util.Log
 import com.example.tmobilecc.data.remote.ApiService
 import com.example.tmobilecc.domain.models.Page
 import com.example.tmobilecc.domain.repository.ApiaryMockRepository
@@ -13,7 +12,6 @@ class ApiaryMockRepositoryImpl(
 		return try {
 			val res = apiService.getHomePageFeeds()
 			if (res.isSuccessful && res.body() != null) {
-				Log.d("ApiaryMockRepositoryImpl", "getHomePageFeeds: ${res.body()}")
 				NetworkState.Success(data = res.body()!!.page)
 			} else
 				NetworkState.Error(message = "Something went wrong.")
