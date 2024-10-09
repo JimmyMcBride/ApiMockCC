@@ -11,9 +11,9 @@ class ApiaryMockRepositoryImpl(
 	override suspend fun getHomePageFeeds(): NetworkState<Page> {
 		return try {
 			val res = apiService.getHomePageFeeds()
-			if (res.isSuccessful && res.body() != null) {
+			if (res.isSuccessful && res.body() != null)
 				NetworkState.Success(data = res.body()!!.page)
-			} else
+			else
 				NetworkState.Error(message = "Something went wrong.")
 		} catch (e: Exception) {
 			NetworkState.Error(message = e.message.toString())
