@@ -70,6 +70,7 @@ class HomeViewModelTest {
 
 		// Trigger loading
 		viewModel.loadHomePageFeeds()
+
 		// Verify that the state is set to Loading
 		assertEquals(NetworkState.Loading, viewModel.homePageFeeds.value)
 
